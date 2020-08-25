@@ -1,14 +1,13 @@
 <template>
-  <div class="box">
-    {{ msg }}
-  </div>
+  <div class="box"></div>
 </template>
 
 <script>
+  import './base.scss'
   export default {
     name: 'App',
     mounted() {
-      console.log('dom加载完成')
+      /* global CLASS_PREFIX*/
     },
     data() {
       return {
@@ -17,11 +16,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  .box {
-    font-size: 100px;
-    height: 100vh;
-    background-color: #cecece;
-  }
-</style>

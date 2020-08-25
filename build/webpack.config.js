@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
@@ -33,7 +34,10 @@ module.exports = {
       filename: 'index.html',
       hash: true //给引入的js和css添加hash后缀，防止缓存
     }),
-    new VueLoaderPlugin() //将定义的 .js 、 .css 规则应用到 .vue 文件中
+    new VueLoaderPlugin(), //将定义的 .js 、 .css 规则应用到 .vue 文件中
+    new webpack.DefinePlugin({
+      CLASS_PREFIX: JSON.stringify('noSyntaxError') //设置所有UI组件类名前缀为全局变量
+    })
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
