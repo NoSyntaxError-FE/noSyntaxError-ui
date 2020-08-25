@@ -1,15 +1,18 @@
 <template>
   <div class="box">
-    {{ name }}
+    {{ msg }}
   </div>
 </template>
 
 <script>
   export default {
     name: 'App',
+    mounted() {
+      console.log('dom加载完成')
+    },
     data() {
       return {
-        name: 'lcf'
+        msg: '这是首页'
       }
     }
   }
@@ -17,6 +20,7 @@
 
 <style lang="scss" scoped>
   .box {
+    font-size: 100px;
     height: 100vh;
     background-color: #cecece;
   }

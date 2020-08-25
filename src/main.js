@@ -4,4 +4,3 @@ import App from './App'
 new Vue({
   render: h => h(App)
 }).$mount('#app')
-console.log(776667)
