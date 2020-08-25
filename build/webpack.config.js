@@ -1,14 +1,13 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const mode = process.env.NODE_ENV === 'development' ? mode : 'production'
-console.log(mode, __dirname)
 module.exports = {
-  mode,
-  entry: './src',
+  mode: process.env.NODE_ENV,
+  entry: './src/main.js',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: 'index.html'
+      template: 'public/index.html',
+      filename: 'index.html',
+      hash: true //给引入的js和css添加hash后缀，防止缓存
     })
   ],
   module: {
@@ -25,7 +24,8 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    open: 'Google Chrome',
+    open: true,
+    hot: true,
     contentBase: './dist',
     compress: true
   }
