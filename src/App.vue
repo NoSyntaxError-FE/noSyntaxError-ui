@@ -1,16 +1,19 @@
 <template>
-  <div class="box"></div>
+  <div class="container">
+    {{ msg }}
+    <Loading></Loading>
+  </div>
 </template>
 
 <script>
+  import Loading from './components/Loading'
   import './base.scss'
   export default {
     name: 'App',
-    mounted() {
-      /* global CLASS_PREFIX*/
-    },
+    components: { Loading },
     data() {
       return {
+        show: false,
         msg: '这是首页'
       }
     }

@@ -36,7 +36,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(), //将定义的 .js 、 .css 规则应用到 .vue 文件中
     new webpack.DefinePlugin({
-      CLASS_PREFIX: JSON.stringify('noSyntaxError') //设置所有UI组件类名前缀为全局变量
+      THEME: JSON.stringify('default')
     })
   ],
   output: {
